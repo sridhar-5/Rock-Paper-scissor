@@ -176,3 +176,18 @@ body {
 .player-score {
   margin-right: 100px;
 }
+
+.round-results {
+  display: flex;
+  flex-direction: column;
+}
+#winner {
+  display: flex;
+  justify-content: center;
+  font-size: 35px;
+}
+#computer-choice {
+  display: flex;
+  font-size: 35px;
+  justify-content: center;
+}
