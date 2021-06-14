@@ -11,6 +11,7 @@ buttons.forEach((button) => button.addEventListener("click", playround));
 function playround(e) {
   if (isGameOver()) {
     window.alert("Game over.");
+    return;
   }
 
   //getting button id's
@@ -72,10 +73,10 @@ function updateScore(winner) {
   if (winner == "tie") {
     return;
   } else if (winner == "computer") {
-    computerScore++;
+    computerScore = computerScore + 1;
     document.getElementById("computer").innerHTML = computerScore;
   } else {
-    playerScore++;
+    playerScore = playerScore + 1;
     document.getElementById("yours").innerHTML = playerScore;
   }
 }
@@ -84,8 +85,12 @@ function updateScore(winner) {
 
 function finalwinner(player1, player2) {
   if (player1 == 5) {
+    document.getElementById("computer").innerHTML = computerScore;
+    document.getElementById("yours").innerHTML = playerScore;
     window.alert("Congrats! You Won.");
   } else if (player2 == 5) {
+    document.getElementById("yours").innerHTML = playerScore;
+    document.getElementById("computer").innerHTML = computerScore;
     window.alert("Never Give up. Try again");
   }
 }
