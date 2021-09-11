@@ -3,6 +3,10 @@ var computerScore = 0;
 
 var buttons = document.querySelectorAll(".btn");
 
+//Getting two dynamic places of image(where should we make change)
+var user_img=document.getElementById("user_choice");
+var computer_img=document.getElementById("computer_choice");
+var img_display=document.querySelector(".img_display");
 //adding event listener to every selector named .btn and when clicked calling the playround function
 buttons.forEach((button) => button.addEventListener("click", playround));
 
@@ -18,6 +22,11 @@ function playround(e) {
   let button_id;
   let playerSelection = e.target.parentNode.id;
   let computerSeletion = getComputerSelection();
+
+//Changing the image display show
+user_img.src=`images\\${playerSelection}.png`;
+computer_img.src=`images\\${computerSeletion}.png`;
+  img_display.style.display="flex";
   var winner = getWinner(playerSelection, computerSeletion);
   updateScore(winner);
   finalwinner(playerScore, computerScore);
