@@ -191,3 +191,17 @@ body {
   font-size: 35px;
   justify-content: center;
 }
+.img_display{
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  gap:300px;
+}
+.img_display img{
+  width:100px;
+  border: 1px solid white;
+  padding: 15px;
+  border-radius: 7px;
+  margin: 40px;
+}
